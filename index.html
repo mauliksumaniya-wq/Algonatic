@@ -123,7 +123,7 @@
     algo: "Step 1: Get the number of Rows and Columns from the user.\nStep 2: Input the matrix elements.\nStep 3: Show the matrix and count the total zeros.\nStep 4: Calculate non-zero count (Total - Zeros).\nStep 5: If Zeros are more than actual numbers, print 'Sparse Matrix'.\nStep 6: Print only the actual numbers and their address.\nStep 7: End.",
     code: `#include<stdio.h>\n#include<conio.h>\n\nmain()\n{\n    int i, j, row, col, a[100][100], b[100][100], zeroCount = 0, nonZeroCount = 0;\n    printf("Enter Rows & Columns : ");\n    scanf("%d %d", &row, &col);\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            printf("Element [%d][%d] : ", i, j);\n            scanf("%d", &a[i][j]);\n        }\n    }\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            printf("%4d", a[i][j]);\n            if(a[i][j] == 0) zeroCount++;\n        }\n        printf("\\n");\n    }\n\n    nonZeroCount = (row * col) - zeroCount;\n    if(zeroCount > nonZeroCount) printf("Result : Sparse Matrix\\n");\n    else printf("Result : NOT Sparse Matrix\\n");\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            if(a[i][j] != 0) printf("%d %d %d\\n", a[i][j], i, j);\n        }\n    }\n}`,
     explain: "• Nested Loops: Used to scan every single box in the table.\n• zeroCount: Increments only when a '0' is found.\n• Final Filter: The 'if(a[i][j] != 0)' ensures we only see the important values.",
-    video: "https://www.youtube.com/watch?v=5w3E4oWF6Cg&t=19s"
+    video: "https://www.youtube.com/embed/5w3E4oWF6Cg&t=19s"
 },
 {
     title: "Insertion Sort",
