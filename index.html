@@ -1,4 +1,4 @@
-++++++++<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -123,7 +123,7 @@
     algo: "Step 1: Get the number of Rows and Columns from the user.\nStep 2: Input the matrix elements.\nStep 3: Show the matrix and count the total zeros.\nStep 4: Calculate non-zero count (Total - Zeros).\nStep 5: If Zeros are more than actual numbers, print 'Sparse Matrix'.\nStep 6: Print only the actual numbers and their address.\nStep 7: End.",
     code: `#include<stdio.h>\n#include<conio.h>\n\nmain()\n{\n    int i, j, row, col, a[100][100], b[100][100], zeroCount = 0, nonZeroCount = 0;\n    printf("Enter Rows & Columns : ");\n    scanf("%d %d", &row, &col);\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            printf("Element [%d][%d] : ", i, j);\n            scanf("%d", &a[i][j]);\n        }\n    }\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            printf("%4d", a[i][j]);\n            if(a[i][j] == 0) zeroCount++;\n        }\n        printf("\\n");\n    }\n\n    nonZeroCount = (row * col) - zeroCount;\n    if(zeroCount > nonZeroCount) printf("Result : Sparse Matrix\\n");\n    else printf("Result : NOT Sparse Matrix\\n");\n\n    for(i = 0; i < row; i++) {\n        for(j = 0; j < col; j++) {\n            if(a[i][j] != 0) printf("%d %d %d\\n", a[i][j], i, j);\n        }\n    }\n}`,
     explain: "• Nested Loops: Used to scan every single box in the table.\n• zeroCount: Increments only when a '0' is found.\n• Final Filter: The 'if(a[i][j] != 0)' ensures we only see the important values.",
-    video: "https://www.youtube.com/embed/5w3E4oWF6Cg&t=19s"
+    video: "L_TbeE53_Uo"
 },
 {
     title: "Insertion Sort",
@@ -132,7 +132,7 @@
     algo: "Step 1: Start from the second number in the list.\nStep 2: Pick the number and compare it with numbers before it.\nStep 3: If the number before it is larger, shift that number to the right.\nStep 4: Insert your picked number into the empty gap.\nStep 5: Repeat for all numbers until the end.\nStep 6: Show the sorted list.",
     code: `#include<stdio.h>\n#include<conio.h>\nmain()\n{\n    int i, a[100], temp, p, no;\n    printf("Enter Total Numbers:");\n    scanf("%d",&no);\n    for(i=1;i<=no;i++) {\n        printf("Enter Value:");\n        scanf("%d",&a[i]);\n    }\n    a[0]=0;\n    for(i=1;i<=no;i++) {\n        p=i-1; temp=a[i];\n        while(temp < a[p]) {\n            a[p+1]=a[p];\n            p--;\n        }\n        a[p+1]=temp;\n    }\n    for(i=1;i<=no;i++) printf("%d\\t",a[i]);\n}`,
     explain: "• temp: Stores the current number we are trying to insert.\n• while loop: Moves other numbers to the right to make space for 'temp'.\n• a[p+1]: Places the number in its final sorted home.",
-    video: "yCxV0kBf_No"
+    video: "5HIx0697NoM"
 },
 {
     title: "Shell Sort",
@@ -141,7 +141,7 @@
     algo: "Step 1: Start with a big gap (Total Size / 2).\nStep 2: Compare elements at that distance.\nStep 3: If the left element is smaller than the right, swap them (for descending order in this code).\nStep 4: Reduce the gap by half.\nStep 5: Repeat until the gap is zero.\nStep 6: Print the sorted numbers.",
     code: `#include<stdio.h>\n#include<conio.h>\nmain()\n{\n    int no, a[100], i, gap, swap, temp;\n    printf("Enter Size:");\n    scanf("%d",&no);\n    for(i=0;i<no;i++) scanf("%d",&a[i]);\n    gap=no/2;\n    do {\n        do {\n            swap=0;\n            for(i=0;i<no-gap;i++) {\n                if(a[i] < a[i+gap]) {\n                    temp=a[i]; a[i]=a[i+gap]; a[i+gap]=temp;\n                    swap=1;\n                }\n            }\n        } while(swap);\n    } while(gap=gap/2);\n    for(i=0;i<no;i++) printf("%d\\t",a[i]);\n}`,
     explain: "• gap=no/2: Sets the initial jumping distance.\n• swap flag: Checks if any movement happened in the current pass.\n• Outer do-while: Shrinks the gap every time until the whole list is sorted.",
-    video: "9E_6DIn8S0Q"
+    video: "H7fVz049tq0"
 },
 {
     title: "Merge Sort Logic",
@@ -150,7 +150,7 @@
     algo: "Step 1: Take two sorted lists (List A and List B).\nStep 2: Compare the first numbers of both lists.\nStep 3: Put the smaller one into the Result list.\nStep 4: Move to the next number in that list and repeat.\nStep 5: If numbers remain in any list, copy them to the Result list.\nStep 6: Display the final combined sorted list.",
     code: `// This code sorts two lists using Bubble sort and then merges them.\n#include<stdio.h>\n// ... (User provided Merge function logic)\n// Full code handles merging two arrays into one 'res' array.`,
     explain: "• while(i < n && j < m): This ensures we stay inside both lists while comparing.\n• res[k]: This is our new, bigger list where we store the sorted items.\n• Residual loops: If one list finishes early, the remaining items of the other list are simply added to the end.",
-    video: "mB5HXB_K_M8"
+    video: "mB5HXBboxHg"
 },
 {
     title: "Bubble Sort",
@@ -159,7 +159,7 @@
     algo: "Step 1: Start from the first number.\nStep 2: Compare it with the next number.\nStep 3: If the current number is smaller than the next, swap them (for descending order).\nStep 4: Move to the next pair and repeat until the end.\nStep 5: After one full pass, the smallest number is at the end.\nStep 6: Repeat for all numbers.",
     code: `#include<stdio.h>\n#include<conio.h>\nmain()\n{\n    int no, a[100], i, j, swap;\n    printf("Enter Size:");\n    scanf("%d",&no);\n    for(i=0;i<no;i++) scanf("%d",&a[i]);\n    for(i=0;i<no-1;i++) {\n        for(j=0;j<no-i-1;j++) {\n            if(a[j] < a[j+1]) {\n                swap=a[j]; a[j]=a[j+1]; a[j+1]=swap;\n            }\n        }\n    }\n    for(i=0;i<no;i++) printf("%d ",a[i]);\n}`,
     explain: "• Outer Loop (i): Tells us how many passes we need to make.\n• Inner Loop (j): Handles the actual neighbor comparisons.\n• Swap: A temporary variable used to exchange two numbers without losing them.",
-    video: "nmhjrI-aW5o"
+    video: "yIQuK6_mB9M"
 },
 {
     title: "Linear Search",
@@ -168,7 +168,7 @@
     algo: "Step 1: Ask the user for the list of numbers.\nStep 2: Ask the user for the number they want to find.\nStep 3: Start from the first number (index 0).\nStep 4: Check if current number == target.\nStep 5: If yes, say 'Found' and stop.\nStep 6: If you reach the end without finding it, say 'Not in list'.",
     code: `#include<stdio.h>\n#include<conio.h>\nmain()\n{\n    int no, find, i, a[100];\n    printf("Enter Size:");\n    scanf("%d",&no);\n    for(i=0;i<no;i++) scanf("%d",&a[i]);\n    printf("Search for:");\n    scanf("%d",&find);\n    for(i=0;i<no;i++) {\n        if(a[i] == find) {\n            printf("Value %d found at position %d", find, i+1);\n            break;\n        }\n    }\n    if(i==no) printf("No Is Not In A List");\n}`,
     explain: "• if(a[i] == find): This is the heart of the search, comparing every box to our target.\n• break: Once we find the number, we don't waste time checking the rest of the list.\n• i == no: If the loop finishes naturally without breaking, it means the number wasn't there.",
-    video: "466iJ69x298"
+    video: "C46QfTjVcnU"
 }
 				] },
                 { name: "C++ Programming", programs: [] }
@@ -252,7 +252,11 @@
                 <div class="points-container"><ul style="margin-left:20px;">${p.points.split('\n').map(pt => `<li>${pt}</li>`).join('')}</ul></div>
                 <span class="section-title">📝 Explanation</span>
                 <div class="explain-container">${p.explain.replace(/\n/g, '<br>')}</div>
-                <div class="video-container"><div class="video-box"><iframe src="https://www.youtube.com/embed/${p.video}" allowfullscreen></iframe></div></div>
+                <div class="video-container">
+                    <div class="video-box">
+                        <iframe src="https://www.youtube.com/embed/${p.video}" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>`;
     }
 
